@@ -1,0 +1,10 @@
+20:00:04.032 [main] ERROR utils.Log4j - I am error.
+20:00:04.088 [main] FATAL utils.Log4j - I am fatal.
+20:00:50.670 [main] DEBUG utils.Log4j - I am debug.
+20:00:50.676 [main] INFO  utils.Log4j - I am info.
+20:00:50.676 [main] ERROR utils.Log4j - I am error.
+20:00:50.676 [main] FATAL utils.Log4j - I am fatal.
+20:01:46.273 [main] DEBUG utils.Log4j - I am debug.
+20:01:46.278 [main] INFO  utils.Log4j - I am info.
+20:01:46.278 [main] ERROR utils.Log4j - I am error.
+20:01:46.279 [main] FATAL utils.Log4j - I am fatal.
