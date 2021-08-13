@@ -1,0 +1,20 @@
+package Generics;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+	String s = "Shubham";
+	Object o = s;
+	System.out.println(o);
+		
+	Object o2 = "string literal";
+//	String s2 = o2; - Not allowed (cannot convert from Object to String)
+	String s2 = (String) o2;
+	System.out.println(s2);
+	
+	
+	}
+
+}

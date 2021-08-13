@@ -1,0 +1,70 @@
+package ValidatingLandingPage;
+
+
+import java.util.List;
+import java.util.concurrent.TimeUnit;
+import java.util.stream.Collectors;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
+
+import pageObject.LandingPage;
+import utils.Screenshot;
+
+public class ValidatingMoreTravel {
+	
+	LandingPage lp;
+	List<WebElement> totalOption;
+	List<String> totalOptionValue;
+	WebDriver driver;
+	
+	@BeforeTest
+	void setUp() {
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\shubh\\NewFramework\\chromedriver.exe"); 
+		driver = new ChromeDriver();
+		lp = new LandingPage(driver);
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		lp.go();
+		
+		
+	}
+	
+	@Test
+	void testSize() {
+		lp.moreTravelOption().click();
+		totalOption = lp.moreTravelDropdownOptions();
+		totalOptionValue =  totalOption.stream().map(s -> s.getText()).collect(Collectors.toList());
+
+		Assert.assertEquals(totalOptionValue.size(), 7);
+	}
+	
+	@Test(dataProvider = "data", dependsOnMethods = {"testSize"})
+	void testValues(String data) {
+
+		Assert.assertTrue(totalOptionValue.contains(data));
+		Screenshot sc = new Screenshot(driver);
+		
+	}
+	
+	
+	@DataProvider
+	Object[][] data() {
+		Object[][] data = new Object[7][1];
+		
+		data[0][0] = "Stays";
+		data[1][0] = "Flights";
+		data[2][0] = "Cars";
+		data[3][0] = "Holiday Packages";
+		data[4][0] = "Holiday activity";
+		data[5][0] = "Deals";
+		data[6][0] = "Mobile";
+		
+		return data;
+	}
+
+}

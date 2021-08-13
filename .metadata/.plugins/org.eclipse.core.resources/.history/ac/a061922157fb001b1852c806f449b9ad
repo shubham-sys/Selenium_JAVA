@@ -1,0 +1,15 @@
+package Generics;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+	String s = "Shubham";
+	Object o = s;
+	
+	System.out.println(o);
+		
+	}
+
+}

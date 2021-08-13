@@ -1,0 +1,17 @@
+package ValidatingLandingPage;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import pageObject.LandingPage;
+
+public class ValidatingMoreTravel {
+	
+	WebDriver driver = new ChromeDriver();
+	
+	LandingPage lp = new LandingPage(driver);
+	
+	@Test
+	
+
+}

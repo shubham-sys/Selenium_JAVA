@@ -1,0 +1,26 @@
+package Generics;
+
+public class User {
+	
+	private int point;
+	
+	public void setPoint(int point) {
+		this.point = point;
+	}
+	
+	public int getPoint() {
+		return point;
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		// TODO Auto-generated method stub
+		User other = (User) obj;
+		if (this.point == other.point)
+			return true;
+		else
+			return false;
+	}
+
+
+}

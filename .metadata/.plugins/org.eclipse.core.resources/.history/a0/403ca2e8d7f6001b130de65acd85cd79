@@ -1,0 +1,35 @@
+package ValidatingLandingPage;
+
+
+import java.util.List;
+import java.util.concurrent.TimeUnit;
+import java.util.stream.Collectors;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
+
+import pageObject.LandingPage;
+
+public class ValidatingMoreTravel {
+	
+	@Test
+	void Test() {
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\shubh\\NewFramework\\chromedriver.exe"); 
+		WebDriver driver = new ChromeDriver();
+		LandingPage lp = new LandingPage(driver);
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		lp.go();
+		
+		lp.moreTravelOption().click();
+		List<WebElement> totalOption = lp.moreTravelDropdownOptions();
+		System.out.println(totalOption);
+		List<String> totalOptionValue =  totalOption.stream().map(s -> s.getText()).collect(Collectors.toList());
+		System.out.println(totalOptionValue);
+		System.out.println(totalOptionValue.contains("Stays"));
+		System.out.println(totalOptionValue.size());
+		
+	}
+
+}

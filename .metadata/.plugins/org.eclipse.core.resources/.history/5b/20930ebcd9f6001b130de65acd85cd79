@@ -1,0 +1,55 @@
+package ValidatingLandingPage;
+
+
+import java.util.List;
+import java.util.concurrent.TimeUnit;
+import java.util.stream.Collectors;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
+
+import pageObject.LandingPage;
+
+public class ValidatingMoreTravel {
+	
+	LandingPage lp;
+	
+	@BeforeTest
+	void setUp() {
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\shubh\\NewFramework\\chromedriver.exe"); 
+		WebDriver driver = new ChromeDriver();
+		lp = new LandingPage(driver);
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		lp.go();
+		
+		lp.moreTravelOption().click();
+	}
+	
+	@Test(dataProvider = "data")
+	void Test(String data) {
+		
+		List<WebElement> totalOption = lp.moreTravelDropdownOptions();
+	
+		List<String> totalOptionValue =  totalOption.stream().map(s -> s.getText()).collect(Collectors.toList());
+		System.out.println(totalOptionValue);
+		System.out.println(totalOptionValue.contains(data));
+		System.out.println(totalOptionValue.size());
+		
+	}
+	
+	
+	@DataProvider
+	Object[][] data() {
+		Object[][] data = new Object[2][1];
+		
+		data[0][0] = "Stays";
+		data[1][0] = "Flights";
+		
+		return data;
+	}
+
+}

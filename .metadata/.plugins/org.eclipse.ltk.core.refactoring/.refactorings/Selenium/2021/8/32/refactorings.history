@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;utils.TakeScreenshot&apos; to &apos;Screenshot&apos;&#x0D;&#x0A;- Original project: &apos;Selenium&apos;&#x0D;&#x0A;- Original element: &apos;utils.TakeScreenshot&apos;&#x0D;&#x0A;- Renamed element: &apos;utils.Screenshot&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;TakeScreenshot&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;utils{TakeScreenshot.java[TakeScreenshot" matchStrategy="1" name="Screenshot" qualified="false" references="true" similarDeclarations="false" stamp="1628335278136" textual="false" version="1.0"/>
+</session>

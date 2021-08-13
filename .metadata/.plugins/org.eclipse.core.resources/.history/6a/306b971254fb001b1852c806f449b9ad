@@ -1,0 +1,28 @@
+package Generics;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		MyList list = new MyList();
+		
+		list.add(0);
+		list.add(1);
+		list.add(2);
+		list.add(3);
+		
+//		System.out.println(list.get(2));
+//		System.out.println(list.get(9));
+		
+		
+		User user1 = new User(10);
+		
+		User user2 = new User(20);
+		
+		
+		System.out.println(user1.equals(user2));
+
+	}
+
+}

@@ -1,0 +1,13 @@
+package utils;
+
+import org.apache.logging.log4j.*;
+
+public class log4j {
+	
+	private static Logger Log = LogManager.getLogger()
+	
+	public static void main(String[] args) {
+		
+	}
+
+}

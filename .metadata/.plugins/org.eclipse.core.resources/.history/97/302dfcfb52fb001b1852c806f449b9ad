@@ -1,0 +1,21 @@
+package Generics;
+
+public class User {
+	
+	private int point;
+	
+	public void setPoint(int point) {
+		this.point = point;
+	}
+	
+	public int getPoint() {
+		return point;
+	}
+	
+	@Override
+	public boolean equals(Object other) {
+//		if (this.point == other.point)
+			return true;
+	}
+
+}
